@@ -1,0 +1,8 @@
+version: "3.0"
+services:
+  openapi-generator-server:
+    image: openapitools/openapi-generator-cli
+    volumes:
+      - ./:/local
+      - ./kabu_STATION_API.yaml:/local/kabu_STATION_API.yaml
+    command: generate -g python -i /local/kabu_STATION_API.yaml -o /local/
